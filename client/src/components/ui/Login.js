@@ -31,7 +31,7 @@ const Login = () => {
                </div>
                <div className="ml-auto mr-4">
                   <GoogleLogin
-                     clientId="474045149746-54n1rjhf16n2mriq28f7l6qbjo03e66a.apps.googleusercontent.com"
+                     clientId="474045149746-t9k3pb0v4s205g1hbqd2bg4i1qmd5c6r.apps.googleusercontent.com"
                      buttonText="Login"
                      onSuccess={responseGoogle}
                      onFailure={responseGoogle}
