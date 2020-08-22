@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Button, Form, FormGroup, Input } from "reactstrap";
 import useForm from "../../useForm";
 import validate from "../../validateLogin";
@@ -6,8 +6,12 @@ import { useHistory } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 
 const Login = () => {
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+
    const responseGoogle = (response) => {
-      console.log(response);
+      setName(response.profileObj.name);
+      setEmail(response.profileObj.email);
    };
    const { handleChange, handleSubmit, values, errors } = useForm(
       submit,
@@ -30,6 +34,8 @@ const Login = () => {
                   <h1>Sign In</h1>
                </div>
                <div className="ml-auto mr-4">
+                  <h2>Welcome: {name}</h2>
+                  <h2>Email: {email}</h2>
                   <GoogleLogin
                      clientId="474045149746-t9k3pb0v4s205g1hbqd2bg4i1qmd5c6r.apps.googleusercontent.com"
                      buttonText="Login"
