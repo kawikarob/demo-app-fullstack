@@ -12,9 +12,7 @@ export const AllQuotes = () => {
 
    useEffect(() => {
       axios
-         .get(
-            "https://raw.githubusercontent.com/kawikarob/react-demo-app/master/src/components/data/quotes.json?token=APOMTR32OTIQQGMKCPHENIS7JCQJM"
-         )
+         .get("/api/v1/quotes")
          .then((res) => {
             console.log(res);
             setQuotes(res.data);
