@@ -33,17 +33,6 @@ const Login = () => {
                <div className="col">
                   <h1>Sign In</h1>
                </div>
-               <div className="ml-auto mr-4">
-                  <h2>Welcome: {name}</h2>
-                  <h2>Email: {email}</h2>
-                  <GoogleLogin
-                     clientId="474045149746-t9k3pb0v4s205g1hbqd2bg4i1qmd5c6r.apps.googleusercontent.com"
-                     buttonText="Login"
-                     onSuccess={responseGoogle}
-                     onFailure={responseGoogle}
-                     cookiePolicy={"single_host_origin"}
-                  />
-               </div>
             </div>
 
             <Form onSubmit={handleSubmit}>
@@ -81,6 +70,21 @@ const Login = () => {
                   Submit
                </Button>
             </Form>
+            <div className="mt-4">
+               <p>Welcome: {name}</p>
+               <p>Email: {email}</p>
+            </div>
+            <div>
+               <div className="ml-auto mt-2">
+                  <GoogleLogin
+                     clientId="474045149746-t9k3pb0v4s205g1hbqd2bg4i1qmd5c6r.apps.googleusercontent.com"
+                     buttonText="Login"
+                     onSuccess={responseGoogle}
+                     onFailure={responseGoogle}
+                     cookiePolicy={"single_host_origin"}
+                  />
+               </div>
+            </div>
          </Card>
       </div>
    );

@@ -12,7 +12,7 @@ export const AllQuotes = () => {
 
    useEffect(() => {
       axios
-         .get("/api/v1/quotes")
+         .get(`/api/v1/quotes/`)
          .then((res) => {
             console.log(res);
             setQuotes(res.data);
@@ -21,6 +21,19 @@ export const AllQuotes = () => {
             console.log(err);
          });
    }, []);
+
+   // delete quote;
+   useEffect(() => {
+      axios
+         .delete(`/api/v1/quotes/:{id}`)
+         .then((res) => {
+            console.log(res);
+            setQuotes(res.data);
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   }, [quotes.id, removeQuote]);
 
    return (
       <div>
