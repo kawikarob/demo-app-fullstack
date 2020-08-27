@@ -1,13 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../../context/GlobalState";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
+// import axios from "axios";
 
 export const AddQuote = () => {
    const [quote, setQuote] = useState("");
    const { addQuote } = useContext(GlobalContext);
    const history = useHistory();
+
+   useEffect(() => {
+      axios
+         .post(`/api/v1/quotes/`)
+         .then((res) => {
+            console.log(res);
+            setQuote(res.data);
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   }, []);
 
    const onSubmit = (e) => {
       e.preventDefault();

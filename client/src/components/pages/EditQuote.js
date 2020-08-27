@@ -8,6 +8,7 @@ export const EditQuote = (props) => {
       id: "",
       quote: "",
    });
+
    const [quote, setQuote] = useState("");
    const [id, setId] = useState("");
 
