@@ -70,10 +70,7 @@ const Login = () => {
                   Submit
                </Button>
             </Form>
-            <div className="mt-4">
-               <p>Welcome: {name}</p>
-               <p>Email: {email}</p>
-            </div>
+
             <div>
                <div className="ml-auto mt-2">
                   <GoogleLogin
