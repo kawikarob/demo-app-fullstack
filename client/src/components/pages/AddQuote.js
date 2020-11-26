@@ -3,7 +3,7 @@ import { GlobalContext } from "../../context/GlobalState";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link, useHistory } from "react-router-dom";
 import { v4 as uuid } from "uuid";
-// import axios from "axios";
+import axios from "axios";
 
 export const AddQuote = () => {
    const [quote, setQuote] = useState("");
