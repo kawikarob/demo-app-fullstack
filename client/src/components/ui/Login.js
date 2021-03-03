@@ -71,7 +71,7 @@ const Login = () => {
                </Button>
             </Form>
 
-            <div>
+            {/* <div>
                <div className="ml-auto mt-2">
                   <GoogleLogin
                      clientId="474045149746-t9k3pb0v4s205g1hbqd2bg4i1qmd5c6r.apps.googleusercontent.com"
@@ -81,7 +81,7 @@ const Login = () => {
                      cookiePolicy={"single_host_origin"}
                   />
                </div>
-            </div>
+            </div> */}
          </Card>
       </div>
    );
